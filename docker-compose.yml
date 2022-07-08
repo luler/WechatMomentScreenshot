@@ -3,6 +3,7 @@ version: '2'
 services:
   php:
     image: php:7.1-fpm
+    privileged: true
     expose:
       - 9000
     volumes:
