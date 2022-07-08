@@ -16,6 +16,12 @@ cd WechatMomentScreenshot
 docker-compose up -d
 ```
 
+注意：项目下的images目录需要拥有写权限，如果在linux服务器部署时存在权限问题，请执行以下命令赋权
+
+```
+chmod -R 0777 image
+```
+
 ## 使用
 
 ``` 
