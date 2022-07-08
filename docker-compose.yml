@@ -12,6 +12,8 @@ services:
     image: nginx:1.21.6
     ports:
       - 4321:80
+    depends_on:
+      - php
     volumes:
       - ./log/nginx_logs:/var/log/nginx
       - ./config/nginx/conf.d:/etc/nginx/conf.d
