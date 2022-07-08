@@ -1,6 +1,28 @@
 # 朋友圈动态详情截图模拟生成工具
 
+## 环境
+
+- docker
+- docker-compose
+
 ## 部署
+
+```
+//克隆下来
+git clone https://github.com/luler/WechatMomentScreenshot.git
+//去到项目目录里
+cd WechatMomentScreenshot
+//执行以下命令
+docker-compose up -d
+```
+
+## 使用
+
+``` 
+直接访问以下链接即可使用
+
+http://127.0.0.1:4321
+```
 
 ## 使用截图
 

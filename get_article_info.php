@@ -26,7 +26,7 @@ if (empty($_GET['url']) || strpos($_GET['url'], 'mp.weixin.qq.com') === false) {
     if (!empty($result['cover'])) {
         $md5 = md5($_GET['url']);
         $image = 'image/cover/' . $md5 . '.jpg';
-        file_put_contents('cover/' . $md5 . '.txt', $_GET['url']);
+        file_put_contents('image/cover/' . $md5 . '.txt', $_GET['url']);
         file_put_contents($image, file_get_contents($result['cover']));
         $result['cover'] = $image;
     }
