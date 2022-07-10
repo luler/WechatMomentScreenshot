@@ -33,7 +33,7 @@ var configDefault = {
     location: '',
     app: '',
     height: 1920,
-    uiWhite: false,
+    uiWhite: true,
     firstAvatar: false,
     appIcon: false,
     statusIcon: true,
