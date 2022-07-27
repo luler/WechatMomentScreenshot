@@ -18,11 +18,17 @@ if (empty($_GET['url']) || strpos($_GET['url'], 'mp.weixin.qq.com') === false) {
         CURLOPT_USERAGENT => 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko',
     ]);
     $response = curl_exec($ch);
-
+    //获取标题
     preg_match('/var msg_title = \'[\S\s]*?\'.html\\(false\\);/', $response, $matches);
     $result['title'] = empty($matches[0]) ? '' : htmlspecialchars_decode(str_replace(['var msg_title = \'', '\'.html(false);'], '', $matches[0]));
+    //获取封面图
     preg_match('/var cdn_url_1_1 = "(.*)";/', $response, $matches);
     $result['cover'] = $matches[1] ?? '';
+    //兼容封面图
+    if (empty($result['cover'])) {
+        preg_match('/var msg_cdn_url = "(.*)";/', $response, $matches);
+        $result['cover'] = $matches[1] ?? '';
+    }
     if (!empty($result['cover'])) {
         $md5 = md5($_GET['url']);
         $image = 'image/cover/' . $md5 . '.jpg';
