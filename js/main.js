@@ -13,7 +13,7 @@ function xhrGet(url, callback) {
     xhr.send();
 }
 
-if (navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1) loadScript('js/fuckWechat.min.js');
+// if (navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1) loadScript('js/fuckWechat.min.js');
 
 if (!window.Promise) loadScript('js/polyfill.min.js');
 
