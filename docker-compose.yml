@@ -3,6 +3,7 @@ version: '2'
 services:
   php:
     image: php:7.1-fpm
+    restart: always
     privileged: true
     expose:
       - 9000
@@ -11,6 +12,7 @@ services:
 
   nginx:
     image: nginx:1.21.6
+    restart: always
     ports:
       - 4321:80
     depends_on:
